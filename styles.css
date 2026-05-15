@@ -1,0 +1,175 @@
+import React from "react";
+import { Film, Sparkles, Star, Camera, Tv, Instagram, Mail } from "lucide-react";
+
+export default function BeCriticalHomepage() {
+  const reviews = [
+    {
+      title: "Featured Review Title",
+      meta: "2026 · Drama / Comedy · ★★★½",
+      copy: "A sharp, stylish review teaser will go here — just enough to pull readers into the full piece.",
+    },
+    {
+      title: "Latest Review",
+      meta: "2026 · Thriller · ★★★",
+      copy: "Short review preview text for the archive cards.",
+    },
+    {
+      title: "Another Recent Watch",
+      meta: "2026 · Blockbuster · ★★★★",
+      copy: "A punchy one- or two-sentence summary that captures your take.",
+    },
+  ];
+
+  const gallery = ["Premiere Night", "Theater Visit", "Outfit Detail", "Screening Moment", "City Excursion", "Movie Memory"];
+
+  return (
+    <main className="min-h-screen bg-[#07070b] text-white overflow-hidden">
+      <section className="relative min-h-screen px-6 py-8 md:px-12 lg:px-20 flex items-center">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(246,9,186,0.35),transparent_30%),radial-gradient(circle_at_80%_15%,rgba(9,246,69,0.28),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(255,243,9,0.16),transparent_35%)]" />
+        <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] bg-[size:36px_36px]" />
+
+        <div className="relative z-10 grid lg:grid-cols-2 gap-14 items-center w-full max-w-7xl mx-auto">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#09F645]/60 bg-black/40 px-4 py-2 text-sm text-[#09F645] shadow-[0_0_28px_rgba(9,246,69,.28)] mb-8">
+              <Sparkles size={16} /> Film · Fashion · Fearless Opinions
+            </div>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.82]">
+              BE <span className="text-[#F609BA] drop-shadow-[0_0_18px_rgba(246,9,186,.75)]">CRITICAL</span>
+            </h1>
+            <p className="mt-8 text-3xl md:text-5xl font-extrabold tracking-tight text-[#FFF309] drop-shadow-[0_0_14px_rgba(255,243,9,.45)]">
+              Reviews Worth Dressing Up For
+            </p>
+            <p className="mt-4 text-xl md:text-2xl text-white/85 italic">
+              Critique. Connect. Conquer.
+            </p>
+            <p className="mt-8 max-w-2xl text-lg md:text-xl leading-8 text-white/78">
+              I watch everything. I overthink a lot. Be Critical is where cinema, style, and sharp criticism come together—from premieres and screenings to the reviews worth dressing up for.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <button className="rounded-full bg-[#F609BA] px-7 py-3 font-bold text-white shadow-[0_0_26px_rgba(246,9,186,.55)] hover:scale-105 transition">
+                Read Reviews
+              </button>
+              <button className="rounded-full border border-[#09F645] px-7 py-3 font-bold text-[#09F645] shadow-[0_0_20px_rgba(9,246,69,.25)] hover:bg-[#09F645] hover:text-black transition">
+                Out & About
+              </button>
+            </div>
+          </div>
+
+          <div className="relative min-h-[560px]">
+            <PhotoCard label="Premiere" className="absolute left-4 top-8 rotate-[-8deg]" accent="bg-[#F609BA]" />
+            <PhotoCard label="Screening" className="absolute right-6 top-0 rotate-[7deg]" accent="bg-[#09F645]" />
+            <PhotoCard label="Style" className="absolute left-20 top-56 rotate-[5deg]" accent="bg-[#FFF309]" />
+            <PhotoCard label="Cinema Night" className="absolute right-2 top-64 rotate-[-6deg]" accent="bg-[#F609BA]" />
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-3xl border border-white/15 bg-black/65 px-6 py-4 shadow-2xl backdrop-blur">
+              <p className="text-sm uppercase tracking-[0.35em] text-[#09F645]">Now Showing</p>
+              <p className="text-2xl font-black">Your Movie Life</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-12 lg:px-20 py-24 bg-white text-black">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start">
+          <div>
+            <SectionKicker icon={<Film size={18} />} text="Featured Review" />
+            <h2 className="mt-4 text-5xl md:text-6xl font-black tracking-tight">The review currently at center stage.</h2>
+            <p className="mt-6 text-lg leading-8 text-black/70">
+              Whether it’s awards season prestige, blockbuster chaos, cult classics, or films worth arguing about long after the credits roll, this is where the latest spotlight review lives.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {reviews.map((review, index) => (
+              <article key={review.title} className={`rounded-3xl p-6 border-2 shadow-xl ${index === 0 ? "md:col-span-3 bg-black text-white border-[#F609BA]" : "bg-white border-black/10"}`}>
+                <div className="flex items-center gap-1 text-[#FFF309] mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                </div>
+                <h3 className="text-2xl font-black">{review.title}</h3>
+                <p className="mt-2 text-sm opacity-70">{review.meta}</p>
+                <p className="mt-4 leading-7 opacity-80">{review.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#0d0d13]">
+        <div className="max-w-7xl mx-auto">
+          <SectionKicker icon={<Camera size={18} />} text="Out & About" />
+          <div className="mt-4 grid lg:grid-cols-[.75fr_1.25fr] gap-10 items-end">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-black tracking-tight">The moments outside the review.</h2>
+              <p className="mt-6 text-lg leading-8 text-white/72">
+                Some movies deserve more than a review—they deserve the full experience. From premiere nights and theater visits to themed looks, special screenings, and cinematic city adventures, this is where the memories live.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {gallery.map((item, index) => (
+                <div key={item} className="relative aspect-[4/5] rounded-3xl bg-white/10 border border-white/10 overflow-hidden shadow-xl">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(246,9,186,.45),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(9,246,69,.35),transparent_30%)]" />
+                  <div className={`absolute top-4 left-1/2 -translate-x-1/2 w-20 h-6 ${index % 2 ? "bg-[#09F645]" : "bg-[#F609BA]"} opacity-90 rotate-${index % 2 ? "6" : "-6"}`} />
+                  <p className="absolute bottom-5 left-5 right-5 font-black text-xl">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-12 lg:px-20 py-24 bg-black">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative rounded-[2rem] border-8 border-zinc-800 bg-zinc-950 p-5 shadow-[0_0_45px_rgba(246,9,186,.22)]">
+            <div className="aspect-video rounded-2xl bg-[radial-gradient(circle_at_center,rgba(9,246,69,.25),rgba(246,9,186,.16),#07070b_70%)] border border-white/10 flex items-center justify-center">
+              <Tv size={96} className="text-[#09F645] drop-shadow-[0_0_18px_rgba(9,246,69,.8)]" />
+            </div>
+            <div className="mt-4 flex gap-3 justify-end">
+              <span className="h-4 w-4 rounded-full bg-[#F609BA]" />
+              <span className="h-4 w-4 rounded-full bg-[#09F645]" />
+              <span className="h-4 w-4 rounded-full bg-[#FFF309]" />
+            </div>
+          </div>
+          <div>
+            <SectionKicker icon={<Sparkles size={18} />} text="About Be Critical" />
+            <h2 className="mt-4 text-5xl md:text-6xl font-black tracking-tight">More than a review platform.</h2>
+            <p className="mt-6 text-lg leading-8 text-white/75">
+              Be Critical is a celebration of the full moviegoing experience. From premieres and screenings to themed outfits, red carpets, and post-credit debates, cinema has always been more than just watching a film—it’s an event.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-white/75">
+              This space was built for people who believe movies are worth showing up for—sometimes literally dressed for the occasion.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="px-6 md:px-12 lg:px-20 py-16 bg-[#F609BA] text-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 items-start md:items-center">
+          <div>
+            <h2 className="text-4xl font-black tracking-tight">Stay Connected</h2>
+            <p className="mt-3 max-w-2xl text-white/85">Join the conversation beyond the credits: reviews, premiere nights, outfit moments, hot takes, and dramatic ranking lists.</p>
+          </div>
+          <div className="flex gap-3">
+            <button className="rounded-full bg-black px-5 py-3 font-bold flex items-center gap-2"><Instagram size={18} /> Socials</button>
+            <button className="rounded-full bg-white text-black px-5 py-3 font-bold flex items-center gap-2"><Mail size={18} /> Contact</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+function PhotoCard({ label, className, accent }) {
+  return (
+    <div className={`${className} w-56 md:w-64 rounded-2xl bg-white p-3 shadow-2xl`}>
+      <div className={`absolute -top-3 left-1/2 -translate-x-1/2 h-7 w-24 ${accent} opacity-90 rotate-3`} />
+      <div className="aspect-[4/5] rounded-xl bg-[radial-gradient(circle_at_30%_25%,rgba(246,9,186,.55),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(9,246,69,.45),transparent_30%),#111]" />
+      <p className="mt-3 text-black font-black text-lg">{label}</p>
+    </div>
+  );
+}
+
+function SectionKicker({ icon, text }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full bg-[#09F645] text-black px-4 py-2 text-sm font-black uppercase tracking-[0.2em]">
+      {icon} {text}
+    </div>
+  );
+}
