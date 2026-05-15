@@ -1,113 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Be Critical | Reviews Worth Dressing Up For</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+:root {
+  --pink: #F609BA;
+  --green: #09F645;
+  --yellow: #FFF309;
+  --black: #07070b;
+  --white: #ffffff;
+}
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-left">
-        <p class="kicker">Film • Fashion • Fearless Opinions</p>
-        <h1>BE <span>CRITICAL</span></h1>
-        <h2>Reviews Worth Dressing Up For</h2>
-        <p class="signature">Critique. Connect. Conquer.</p>
+* {
+  box-sizing: border-box;
+}
 
-        <p class="intro">
-          I watch everything. I overthink a lot. Be Critical is where cinema,
-          style, and sharp criticism come together—from premieres and screenings
-          to the reviews worth dressing up for.
-        </p>
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
 
-        <div class="hero-buttons">
-          <a href="#reviews" class="btn pink">Read Reviews</a>
-          <a href="#gallery" class="btn green">Out & About</a>
-        </div>
-      </div>
+.container {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
 
-      <div class="hero-right">
-        <div class="photo-card pink">Premiere Night</div>
-        <div class="photo-card green">Screening</div>
-        <div class="photo-card yellow">Style Moment</div>
-        <div class="photo-card pink">Cinema Night</div>
-      </div>
-    </div>
-  </header>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(246, 9, 186, 0.35), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(9, 246, 69, 0.25), transparent 30%),
+    linear-gradient(135deg, #050507, #101019);
+}
 
-  <section id="reviews" class="section light">
-    <div class="container">
-      <p class="section-label">Featured Review</p>
-      <h3>The review currently at center stage.</h3>
-      <p class="section-copy">
-        Whether it’s awards season prestige, blockbuster chaos, cult classics,
-        or films worth arguing about long after the credits roll, this is where
-        the latest spotlight review lives.
-      </p>
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
 
-      <div class="review-card">
-        <h4>Featured Review Title</h4>
-        <p>2026 • Drama / Comedy • ★★★★☆</p>
-        <p>
-          A sharp, stylish review teaser will go here — just enough to pull
-          readers into the full piece.
-        </p>
-      </div>
-    </div>
-  </section>
+.kicker,
+.section-label {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 900;
+}
 
-  <section id="gallery" class="section dark">
-    <div class="container">
-      <p class="section-label">Out & About</p>
-      <h3>The moments outside the review.</h3>
-      <p class="section-copy">
-        Some movies deserve more than a review—they deserve the full experience.
-        From premiere nights and theater visits to themed looks, special screenings,
-        and cinematic city adventures, this is where the memories live.
-      </p>
+h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.85;
+  margin: 20px 0;
+  font-weight: 900;
+}
 
-      <div class="gallery-grid">
-        <div>Premiere Night</div>
-        <div>Theater Visit</div>
-        <div>Outfit Detail</div>
-        <div>Screening Moment</div>
-        <div>City Excursion</div>
-        <div>Movie Memory</div>
-      </div>
-    </div>
-  </section>
+h1 span {
+  color: var(--pink);
+  text-shadow: 0 0 24px rgba(246, 9, 186, 0.8);
+}
 
-  <section class="section black">
-    <div class="container about-grid">
-      <div class="tv-box">BE CRITICAL</div>
+.hero h2 {
+  color: var(--yellow);
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0;
+}
 
-      <div>
-        <p class="section-label">About Be Critical</p>
-        <h3>More than a review platform.</h3>
-        <p class="section-copy">
-          Be Critical is a celebration of the full moviegoing experience. From
-          premieres and screenings to themed outfits, red carpets, and post-credit
-          debates, cinema has always been more than just watching a film—it’s an event.
-        </p>
-      </div>
-    </div>
-  </section>
+.signature {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+}
 
-  <footer>
-    <div class="container">
-      <h3>Stay Connected</h3>
-      <p>
-        Join the conversation beyond the credits: reviews, premiere nights,
-        outfit moments, hot takes, and dramatic ranking lists.
-      </p>
-    </div>
-  </footer>
+.intro,
+.section-copy {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  max-width: 720px;
+}
 
-</body>
-</html>
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
 
+.btn {
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 900;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.pink {
+  background: var(--pink);
+  color: white;
+  box-shadow: 0 0 24px rgba(246, 9, 186, 0.45);
+}
+
+.btn.green {
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+
+.hero-right {
+  min-height: 540px;
+  position: relative;
+}
+
+.photo-card {
+  position: absolute;
+  width: 230px;
+  height: 300px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(246,9,186,.55), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(9,246,69,.45), transparent 35%),
+    #15151f;
+  border: 10px solid white;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 90px;
+  height: 28px;
+  opacity: 0.9;
+}
+
+.photo-card.pink::before {
+  background: var(--pink);
+}
+
+.photo-card.green::before {
+  background: var(--green);
+}
+
+.photo-card.yellow::before {
+  background: var(--yellow);
+}
+
+.photo-card:nth-child(1) {
+  top: 30px;
+  left: 20px;
+  transform: rotate(-8deg);
+}
+
+.photo-card:nth-child(2) {
+  top: 0;
+  right: 20px;
+  transform: rotate(7deg);
+}
+
+.photo-card:nth-child(3) {
+  top: 250px;
+  left: 80px;
+  transform: rotate(5deg);
+}
+
+.photo-card:nth-child(4) {
+  top: 280px;
+  right: 0;
+  transform: rotate(-6deg);
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.light {
+  background: white;
+  color: black;
+}
+
+.light .section-copy {
+  color: rgba(0,0,0,0.7);
+}
+
+.dark {
+  background: #0d0d13;
+}
+
+.black {
+  background: black;
+}
+
+h3 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin: 18px 0;
+  font-weight: 900;
+}
+
+.review-card {
+  margin-top: 36px;
+  background: black;
+  color: white;
+  border: 2px solid var(--pink);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(246, 9, 186, 0.18);
+}
+
+.review-card h4 {
+  font-size: 2rem;
+  margin: 0 0 12px;
+}
+
+.gallery-grid {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-grid div {
+  min-height: 220px;
+  border-radius: 28px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.35rem;
+  font-weight: 900;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(246,9,186,.45), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(9,246,69,.35), transparent 35%),
+    #181824;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.tv-box {
+  min-height: 330px;
+  border: 18px solid #20202a;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  text-shadow: 0 0 25px rgba(9,246,69,.9);
+  background:
+    radial-gradient(circle, rgba(9,246,69,.22), rgba(246,9,186,.13), #050507 70%);
+  box-shadow: 0 0 50px rgba(246, 9, 186, 0.22);
+}
+
+footer {
+  background: var(--pink);
+  color: white;
+  padding: 64px 0;
+}
+
+footer h3 {
+  margin: 0 0 12px;
+}
+
+footer p {
+  max-width: 760px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    min-height: 760px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
