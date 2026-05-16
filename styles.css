@@ -116,68 +116,18 @@ h1 span {
 }
 
 .photo-card {
-  position: absolute;
-  width: 230px;
-  height: 300px;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(246,9,186,.55), transparent 35%),
-    radial-gradient(circle at 80% 80%, rgba(9,246,69,.45), transparent 35%),
-    #15151f;
-  border: 10px solid white;
-  color: white;
-  display: flex;
-  align-items: flex-end;
-  padding: 18px;
-  font-size: 1.25rem;
-  font-weight: 900;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 220px;
+    background: #111;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.photo-card::before {
-  content: "";
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-5deg);
-  width: 90px;
-  height: 28px;
-  opacity: 0.9;
-}
-
-.photo-card.pink::before {
-  background: var(--pink);
-}
-
-.photo-card.green::before {
-  background: var(--green);
-}
-
-.photo-card.yellow::before {
-  background: var(--yellow);
-}
-
-.photo-card:nth-child(1) {
-  top: 30px;
-  left: 20px;
-  transform: rotate(-8deg);
-}
-
-.photo-card:nth-child(2) {
-  top: 0;
-  right: 20px;
-  transform: rotate(7deg);
-}
-
-.photo-card:nth-child(3) {
-  top: 250px;
-  left: 80px;
-  transform: rotate(5deg);
-}
-
-.photo-card:nth-child(4) {
-  top: 280px;
-  right: 0;
-  transform: rotate(-6deg);
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .section {
